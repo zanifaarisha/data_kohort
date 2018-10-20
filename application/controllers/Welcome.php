@@ -6,7 +6,8 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('templates/admin/index');
+		$data['konten'] = 'dashboard';
+		$this->load->view('templates/admin/index', $data);
 	}
 
 	public function user()

@@ -40,7 +40,9 @@ class Nama extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('nama/tbl_nama_list', $data);
+
+        $data['konten'] = 'nama/tbl_nama_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -51,8 +53,10 @@ class Nama extends CI_Controller
 		'id_nama' => $row->id_nama,
 		'nama_ibu' => $row->nama_ibu,
 		'nama_suami' => $row->nama_suami,
-	    );
-            $this->load->view('nama/tbl_nama_read', $data);
+        );
+
+        $data['konten'] = 'nama/tbl_nama_read';
+        $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('nama'));
@@ -67,8 +71,9 @@ class Nama extends CI_Controller
 	    'id_nama' => set_value('id_nama'),
 	    'nama_ibu' => set_value('nama_ibu'),
 	    'nama_suami' => set_value('nama_suami'),
-	);
-        $this->load->view('nama/tbl_nama_form', $data);
+    );
+        $data['konten'] = 'nama/tbl_nama_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -100,8 +105,10 @@ class Nama extends CI_Controller
 		'id_nama' => set_value('id_nama', $row->id_nama),
 		'nama_ibu' => set_value('nama_ibu', $row->nama_ibu),
 		'nama_suami' => set_value('nama_suami', $row->nama_suami),
-	    );
-            $this->load->view('nama/tbl_nama_form', $data);
+        );
+        
+            $data['konten'] = 'nama/tbl_nama_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('nama'));

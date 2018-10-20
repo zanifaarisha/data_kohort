@@ -1,15 +1,4 @@
-<!doctype html>
-<html>
-    <head>
-        <title>harviacode.com - codeigniter crud generator</title>
-        <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
-        <style>
-            body{
-                padding: 15px;
-            }
-        </style>
-    </head>
-    <body>
+
         <h2 style="margin-top:0px">Tbl_nifas List</h2>
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
@@ -55,9 +44,9 @@
                 ?>
                 <tr>
 			<td width="80px"><?php echo ++$start ?></td>
-			<td><?php echo $nifas->6jam_3hr ?></td>
-			<td><?php echo $nifas->4_28hr ?></td>
-			<td><?php echo $nifas->29_42hr ?></td>
+			<td><?php echo $nifas->enamjam_3hr ?></td>
+			<td><?php echo $nifas->empat_28hr ?></td>
+			<td><?php echo $nifas->duasembilan_42hr ?></td>
 			<td><?php echo $nifas->ket ?></td>
 			<td style="text-align:center" width="200px">
 				<?php 
@@ -81,5 +70,3 @@
                 <?php echo $pagination ?>
             </div>
         </div>
-    </body>
-</html>

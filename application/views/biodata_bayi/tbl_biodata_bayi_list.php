@@ -1,15 +1,4 @@
-<!doctype html>
-<html>
-    <head>
-        <title>harviacode.com - codeigniter crud generator</title>
-        <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
-        <style>
-            body{
-                padding: 15px;
-            }
-        </style>
-    </head>
-    <body>
+
         <h2 style="margin-top:0px">Tbl_biodata_bayi List</h2>
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
@@ -65,7 +54,7 @@
 			<td><?php echo $biodata_bayi->nik ?></td>
 			<td><?php echo $biodata_bayi->nama_bayi ?></td>
 			<td><?php echo $biodata_bayi->tgl_lahir ?></td>
-			<td><?php echo $biodata_bayi->jenis kelamin ?></td>
+			<td><?php echo $biodata_bayi->jenis_kelamin ?></td>
 			<td><?php echo $biodata_bayi->nama_ibu ?></td>
 			<td><?php echo $biodata_bayi->alamat ?></td>
 			<td><?php echo $biodata_bayi->no_tlp ?></td>
@@ -93,5 +82,3 @@
                 <?php echo $pagination ?>
             </div>
         </div>
-    </body>
-</html>

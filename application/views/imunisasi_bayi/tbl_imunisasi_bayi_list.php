@@ -1,15 +1,4 @@
-<!doctype html>
-<html>
-    <head>
-        <title>harviacode.com - codeigniter crud generator</title>
-        <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
-        <style>
-            body{
-                padding: 15px;
-            }
-        </style>
-    </head>
-    <body>
+
         <h2 style="margin-top:0px">Tbl_imunisasi_bayi List</h2>
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
@@ -58,11 +47,11 @@
                 ?>
                 <tr>
 			<td width="80px"><?php echo ++$start ?></td>
-			<td><?php echo $imunisasi_bayi->hb-7hr ?></td>
-			<td><?php echo $imunisasi_bayi->polio 1 ?></td>
-			<td><?php echo $imunisasi_bayi->polio 2 ?></td>
-			<td><?php echo $imunisasi_bayi->polio 3 ?></td>
-			<td><?php echo $imunisasi_bayi->polio 4 ?></td>
+			<td><?php echo $imunisasi_bayi->hb_7hr ?></td>
+			<td><?php echo $imunisasi_bayi->polio_1 ?></td>
+			<td><?php echo $imunisasi_bayi->polio_2 ?></td>
+			<td><?php echo $imunisasi_bayi->polio_3 ?></td>
+			<td><?php echo $imunisasi_bayi->polio_4 ?></td>
 			<td><?php echo $imunisasi_bayi->campak ?></td>
 			<td><?php echo $imunisasi_bayi->IDL ?></td>
 			<td style="text-align:center" width="200px">
@@ -87,5 +76,3 @@
                 <?php echo $pagination ?>
             </div>
         </div>
-    </body>
-</html>

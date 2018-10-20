@@ -1,36 +1,25 @@
-<!doctype html>
-<html>
-    <head>
-        <title>harviacode.com - codeigniter crud generator</title>
-        <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
-        <style>
-            body{
-                padding: 15px;
-            }
-        </style>
-    </head>
-    <body>
+
         <h2 style="margin-top:0px">Tbl_imunisasi_bayi <?php echo $button ?></h2>
         <form action="<?php echo $action; ?>" method="post">
 	    <div class="form-group">
             <label for="varchar">Hb-7hr <?php echo form_error('hb-7hr') ?></label>
-            <input type="text" class="form-control" name="hb-7hr" id="hb-7hr" placeholder="Hb-7hr" value="<?php echo $hb-7hr; ?>" />
+            <input type="text" class="form-control" name="hb-7hr" id="hb_7hr" placeholder="Hb 7hr" value="<?php echo $hb_7hr; ?>" />
         </div>
 	    <div class="form-group">
             <label for="varchar">Polio 1 <?php echo form_error('polio 1') ?></label>
-            <input type="text" class="form-control" name="polio 1" id="polio 1" placeholder="Polio 1" value="<?php echo $polio 1; ?>" />
+            <input type="text" class="form-control" name="polio 1" id="polio 1" placeholder="Polio 1" value="<?php echo $polio_1; ?>" />
         </div>
 	    <div class="form-group">
             <label for="varchar">Polio 2 <?php echo form_error('polio 2') ?></label>
-            <input type="text" class="form-control" name="polio 2" id="polio 2" placeholder="Polio 2" value="<?php echo $polio 2; ?>" />
+            <input type="text" class="form-control" name="polio 2" id="polio 2" placeholder="Polio 2" value="<?php echo $polio_2; ?>" />
         </div>
 	    <div class="form-group">
             <label for="varchar">Polio 3 <?php echo form_error('polio 3') ?></label>
-            <input type="text" class="form-control" name="polio 3" id="polio 3" placeholder="Polio 3" value="<?php echo $polio 3; ?>" />
+            <input type="text" class="form-control" name="polio 3" id="polio 3" placeholder="Polio 3" value="<?php echo $polio_3; ?>" />
         </div>
 	    <div class="form-group">
             <label for="varchar">Polio 4 <?php echo form_error('polio 4') ?></label>
-            <input type="text" class="form-control" name="polio 4" id="polio 4" placeholder="Polio 4" value="<?php echo $polio 4; ?>" />
+            <input type="text" class="form-control" name="polio 4" id="polio 4" placeholder="Polio 4" value="<?php echo $polio_4; ?>" />
         </div>
 	    <div class="form-group">
             <label for="varchar">Campak <?php echo form_error('campak') ?></label>
@@ -44,5 +33,3 @@
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
 	    <a href="<?php echo site_url('imunisasi_bayi') ?>" class="btn btn-default">Cancel</a>
 	</form>
-    </body>
-</html>
