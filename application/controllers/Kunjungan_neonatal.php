@@ -40,7 +40,8 @@ class Kunjungan_neonatal extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('kunjungan_neonatal/tbl_kunjungan_neonatal_list', $data);
+        $data['konten'] = 'kunjungan_neonatal/tbl_kunjungan_neonatal_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -53,7 +54,8 @@ class Kunjungan_neonatal extends CI_Controller
 		'kedua' => $row->kedua,
 		'ketiga' => $row->ketiga,
 	    );
-            $this->load->view('kunjungan_neonatal/tbl_kunjungan_neonatal_read', $data);
+            $data['konten'] = 'kunjungan_neonatal/tbl_kunjungan_neonatal_read';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('kunjungan_neonatal'));
@@ -70,7 +72,8 @@ class Kunjungan_neonatal extends CI_Controller
 	    'kedua' => set_value('kedua'),
 	    'ketiga' => set_value('ketiga'),
 	);
-        $this->load->view('kunjungan_neonatal/tbl_kunjungan_neonatal_form', $data);
+        $data['konten'] = 'kunjungan_neonatal/tbl_kunjungan_neonatal_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -105,7 +108,8 @@ class Kunjungan_neonatal extends CI_Controller
 		'kedua' => set_value('kedua', $row->kedua),
 		'ketiga' => set_value('ketiga', $row->ketiga),
 	    );
-            $this->load->view('kunjungan_neonatal/tbl_kunjungan_neonatal_form', $data);
+            $data['konten'] = 'kunjungan_neonatal/tbl_kunjungan_neonatal_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('kunjungan_neonatal'));

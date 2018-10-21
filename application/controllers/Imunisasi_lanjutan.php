@@ -40,7 +40,8 @@ class Imunisasi_lanjutan extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('imunisasi_lanjutan/tbl_imunisasi_lanjutan_list', $data);
+        $data['konten'] = 'imunisasi_lanjutan/tbl_imunisasi_lanjutan_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -52,7 +53,8 @@ class Imunisasi_lanjutan extends CI_Controller
 		'dpt_hb_hib' => $row->dpt_hb_hib,
 		'Campak' => $row->Campak,
 	    );
-            $this->load->view('imunisasi_lanjutan/tbl_imunisasi_lanjutan_read', $data);
+            $data['konten'] = 'imunisasi_lanjutan/tbl_imunisasi_lanjutan_read';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('imunisasi_lanjutan'));
@@ -68,7 +70,8 @@ class Imunisasi_lanjutan extends CI_Controller
 	    'dpt_hb_hib' => set_value('dpt_hb_hib'),
 	    'Campak' => set_value('Campak'),
 	);
-        $this->load->view('imunisasi_lanjutan/tbl_imunisasi_lanjutan_form', $data);
+        $data['konten'] = 'imunisasi_lanjutan/tbl_imunisasi_lanjutan_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -101,7 +104,8 @@ class Imunisasi_lanjutan extends CI_Controller
 		'dpt_hb_hib' => set_value('dpt_hb_hib', $row->dpt_hb_hib),
 		'Campak' => set_value('Campak', $row->Campak),
 	    );
-            $this->load->view('imunisasi_lanjutan/tbl_imunisasi_lanjutan_form', $data);
+            $data['konten'] = 'imunisasi_lanjutan/tbl_imunisasi_lanjutan_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('imunisasi_lanjutan'));

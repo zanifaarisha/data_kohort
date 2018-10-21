@@ -40,7 +40,8 @@ class Pendeteksi_faktor_resiko extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('pendeteksi_faktor_resiko/tbl_pendeteksi_faktor_resiko_list', $data);
+        $data['konten'] = 'pendeteksi_faktor_resiko/tbl_pendeteksi_faktor_resiko_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -52,7 +53,8 @@ class Pendeteksi_faktor_resiko extends CI_Controller
 		'nakes' => $row->nakes,
 		'masyarakat' => $row->masyarakat,
 	    );
-            $this->load->view('pendeteksi_faktor_resiko/tbl_pendeteksi_faktor_resiko_read', $data);
+            $data['konten'] = 'pendeteksi_faktor_resiko/tbl_pendeteksi_faktor_resiko_read';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('pendeteksi_faktor_resiko'));
@@ -68,7 +70,8 @@ class Pendeteksi_faktor_resiko extends CI_Controller
 	    'nakes' => set_value('nakes'),
 	    'masyarakat' => set_value('masyarakat'),
 	);
-        $this->load->view('pendeteksi_faktor_resiko/tbl_pendeteksi_faktor_resiko_form', $data);
+        $data['konten'] = 'pendeteksi_faktor_resiko/tbl_pendeteksi_faktor_resiko_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -101,7 +104,8 @@ class Pendeteksi_faktor_resiko extends CI_Controller
 		'nakes' => set_value('nakes', $row->nakes),
 		'masyarakat' => set_value('masyarakat', $row->masyarakat),
 	    );
-            $this->load->view('pendeteksi_faktor_resiko/tbl_pendeteksi_faktor_resiko_form', $data);
+            $data['konten'] = 'pendeteksi_faktor_resiko/tbl_pendeteksi_faktor_resiko_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('pendeteksi_faktor_resiko'));

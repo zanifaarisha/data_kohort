@@ -40,7 +40,8 @@ class Penolak_persalinan extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('penolak_persalinan/tbl_penolak_persalinan_list', $data);
+        $data['konten'] = 'penolak_persalinan/tbl_penolak_persalinan_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -52,7 +53,8 @@ class Penolak_persalinan extends CI_Controller
 		'nakes_kongisten' => $row->nakes_kongisten,
 		'dukun' => $row->dukun,
 	    );
-            $this->load->view('penolak_persalinan/tbl_penolak_persalinan_read', $data);
+            $data['konten'] = 'penolak_persalinan/tbl_penolak_persalinan_read';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('penolak_persalinan'));
@@ -68,7 +70,8 @@ class Penolak_persalinan extends CI_Controller
 	    'nakes_kongisten' => set_value('nakes_kongisten'),
 	    'dukun' => set_value('dukun'),
 	);
-        $this->load->view('penolak_persalinan/tbl_penolak_persalinan_form', $data);
+        $data['konten'] = 'penolak_persalinan/tbl_penolak_persalinan_from';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -101,7 +104,8 @@ class Penolak_persalinan extends CI_Controller
 		'nakes_kongisten' => set_value('nakes_kongisten', $row->nakes_kongisten),
 		'dukun' => set_value('dukun', $row->dukun),
 	    );
-            $this->load->view('penolak_persalinan/tbl_penolak_persalinan_form', $data);
+            $data['konten'] = 'penolak_persalinan/tbl_penolak_persalinan_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('penolak_persalinan'));

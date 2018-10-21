@@ -40,7 +40,8 @@ class Nifas extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('nifas/tbl_nifas_list', $data);
+        $data['konten'] = 'nifas/tbl_nifas_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -49,12 +50,13 @@ class Nifas extends CI_Controller
         if ($row) {
             $data = array(
 		'id_nifas' => $row->id_nifas,
-		'6jam_3hr' => $row->6jam_3hr,
-		'4_28hr' => $row->4_28hr,
-		'29_42hr' => $row->29_42hr,
+		'enam_jam_tiga_hr' => $row->enam_jam_tiga_hr,
+		'empat_duadelapan_hr' => $row->empat_duadelapan_hr,
+		'duasembilan_empatdua_hr' => $row->duasembilan_empatdua_hr,
 		'ket' => $row->ket,
 	    );
-            $this->load->view('nifas/tbl_nifas_read', $data);
+            $data['konten'] = 'nifas/tbl_nifas_read';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('nifas'));
@@ -72,7 +74,8 @@ class Nifas extends CI_Controller
 	    '29_42hr' => set_value('29_42hr'),
 	    'ket' => set_value('ket'),
 	);
-        $this->load->view('nifas/tbl_nifas_form', $data);
+        $data['konten'] = 'nifas/tbl_nifas_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -104,12 +107,13 @@ class Nifas extends CI_Controller
                 'button' => 'Update',
                 'action' => site_url('nifas/update_action'),
 		'id_nifas' => set_value('id_nifas', $row->id_nifas),
-		'6jam_3hr' => set_value('6jam_3hr', $row->6jam_3hr),
-		'4_28hr' => set_value('4_28hr', $row->4_28hr),
-		'29_42hr' => set_value('29_42hr', $row->29_42hr),
+		'enam_jam_tiga_hr' => set_value('enam_jam_tiga_hr', $row->enam_jam_tiga_hr),
+		'empat_duadelapan_hr' => set_value('empat_duadelapan_hr', $row->empat_duadelapan_hr),
+		'duasembilan_empatdua_hr' => set_value('duasembilan_empatdua_hr', $row->duasembilan_empatdua_hr),
 		'ket' => set_value('ket', $row->ket),
 	    );
-            $this->load->view('nifas/tbl_nifas_form', $data);
+            $data['konten'] = 'nifas/tbl_nifas_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('nifas'));

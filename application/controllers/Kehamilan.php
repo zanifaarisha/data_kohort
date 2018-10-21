@@ -40,7 +40,8 @@ class Kehamilan extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('kehamilan/tbl_kehamilan_list', $data);
+        $data['konten'] = 'kehamilan/tbl_kehamilan_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -53,7 +54,8 @@ class Kehamilan extends CI_Controller
 		'id_imunisasi' => $row->id_imunisasi,
 		'buku_kia_pasang_stiker' => $row->buku_kia_pasang_stiker,
 	    );
-            $this->load->view('kehamilan/tbl_kehamilan_read', $data);
+            $data['konten'] = 'kehamilan/tbl_kehamilan_read';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('kehamilan'));
@@ -70,7 +72,8 @@ class Kehamilan extends CI_Controller
 	    'id_imunisasi' => set_value('id_imunisasi'),
 	    'buku_kia_pasang_stiker' => set_value('buku_kia_pasang_stiker'),
 	);
-        $this->load->view('kehamilan/tbl_kehamilan_form', $data);
+        $data['konten'] = 'kehamilan/tbl_kehamilan_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -105,7 +108,8 @@ class Kehamilan extends CI_Controller
 		'id_imunisasi' => set_value('id_imunisasi', $row->id_imunisasi),
 		'buku_kia_pasang_stiker' => set_value('buku_kia_pasang_stiker', $row->buku_kia_pasang_stiker),
 	    );
-            $this->load->view('kehamilan/tbl_kehamilan_form', $data);
+            $data['konten'] = 'kehamilan/tbl_kehamilan_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('kehamilan'));

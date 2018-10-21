@@ -40,7 +40,8 @@ class Kematian_post_natal extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('kematian_post_natal/tbl_kematian_post_natal_list', $data);
+        $data['konten'] = 'kematian_post_natal/tbl_kematian_post_natal_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -51,7 +52,8 @@ class Kematian_post_natal extends CI_Controller
 		'id_kematian' => $row->id_kematian,
 		'ket' => $row->ket,
 	    );
-            $this->load->view('kematian_post_natal/tbl_kematian_post_natal_read', $data);
+            $data['konten'] = 'kematian_post_natal/tbl_kematian_post_natal_read';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('kematian_post_natal'));
@@ -66,7 +68,8 @@ class Kematian_post_natal extends CI_Controller
 	    'id_kematian' => set_value('id_kematian'),
 	    'ket' => set_value('ket'),
 	);
-        $this->load->view('kematian_post_natal/tbl_kematian_post_natal_form', $data);
+        $data['konten'] = 'kematian_post_natal/tbl_kematian_post_natal_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -97,7 +100,8 @@ class Kematian_post_natal extends CI_Controller
 		'id_kematian' => set_value('id_kematian', $row->id_kematian),
 		'ket' => set_value('ket', $row->ket),
 	    );
-            $this->load->view('kematian_post_natal/tbl_kematian_post_natal_form', $data);
+            $data['konten'] = 'kematian_post_natal/tbl_kematian_post_natal_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('kematian_post_natal'));

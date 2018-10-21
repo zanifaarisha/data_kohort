@@ -40,7 +40,8 @@ class Biodata_balita extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('biodata_balita/tbl_biodata_balita_list', $data);
+        $data['konten'] = 'biodata_balita/tbl_biodata_balita_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -59,7 +60,8 @@ class Biodata_balita extends CI_Controller
 		'no_tlp' => $row->no_tlp,
 		'punya_buku_kia' => $row->punya_buku_kia,
 	    );
-            $this->load->view('biodata_balita/tbl_biodata_balita_read', $data);
+            $data['konten'] = 'biodata_balita/tbl_biodata_balita_read';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('biodata_balita'));
@@ -82,7 +84,8 @@ class Biodata_balita extends CI_Controller
 	    'no_tlp' => set_value('no_tlp'),
 	    'punya_buku_kia' => set_value('punya_buku_kia'),
 	);
-        $this->load->view('biodata_balita/tbl_biodata_balita_form', $data);
+        $data['konten'] = 'biodata_balita/tbl_biodata_balita_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -129,7 +132,8 @@ class Biodata_balita extends CI_Controller
 		'no_tlp' => set_value('no_tlp', $row->no_tlp),
 		'punya_buku_kia' => set_value('punya_buku_kia', $row->punya_buku_kia),
 	    );
-            $this->load->view('biodata_balita/tbl_biodata_balita_form', $data);
+            $data['konten'] = 'biodata_balita/tbl_biodata_balita_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('biodata_balita'));

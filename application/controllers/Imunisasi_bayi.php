@@ -40,7 +40,8 @@ class Imunisasi_bayi extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('imunisasi_bayi/tbl_imunisasi_bayi_list', $data);
+        $data['konten'] = 'imunisasi_bayi/tbl_imunisasi_bayi_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -49,15 +50,16 @@ class Imunisasi_bayi extends CI_Controller
         if ($row) {
             $data = array(
 		'id_imunisasi' => $row->id_imunisasi,
-		'hb-7hr' => $row->hb-7hr,
-		'polio 1' => $row->polio 1,
-		'polio 2' => $row->polio 2,
-		'polio 3' => $row->polio 3,
-		'polio 4' => $row->polio 4,
+		'hb_tujuh_hr' => $row->hb_tujuh_hr,
+		'polio_satu' => $row->polio_satu,
+		'polio_dua' => $row->polio_dua,
+		'polio_tiga' => $row->polio_tiga,
+		'polio_empat' => $row->polio_empat,
 		'campak' => $row->campak,
 		'IDL' => $row->IDL,
 	    );
-            $this->load->view('imunisasi_bayi/tbl_imunisasi_bayi_read', $data);
+            $data['konten'] = 'imunisasi_bayi/tbl_imunisasi_bayi_read';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('imunisasi_bayi'));
@@ -78,7 +80,8 @@ class Imunisasi_bayi extends CI_Controller
 	    'campak' => set_value('campak'),
 	    'IDL' => set_value('IDL'),
 	);
-        $this->load->view('imunisasi_bayi/tbl_imunisasi_bayi_form', $data);
+        $data['konten'] = 'imunisasi_bayi/tbl_imunisasi_bayi_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -113,15 +116,16 @@ class Imunisasi_bayi extends CI_Controller
                 'button' => 'Update',
                 'action' => site_url('imunisasi_bayi/update_action'),
 		'id_imunisasi' => set_value('id_imunisasi', $row->id_imunisasi),
-		'hb-7hr' => set_value('hb-7hr', $row->hb-7hr),
-		'polio 1' => set_value('polio 1', $row->polio 1),
-		'polio 2' => set_value('polio 2', $row->polio 2),
-		'polio 3' => set_value('polio 3', $row->polio 3),
-		'polio 4' => set_value('polio 4', $row->polio 4),
+		'hb_tujuh_hr' => set_value('hb_tujuh_hr', $row->hb_tujuh_hr),
+		'polio_satu' => set_value('polio_satu', $row->polio_satu),
+		'polio_dua' => set_value('polio_dua', $row->polio_dua),
+		'polio_tiga' => set_value('polio_tiga', $row->polio_tiga),
+		'polio_empat' => set_value('polio_empat', $row->polio_empat),
 		'campak' => set_value('campak', $row->campak),
 		'IDL' => set_value('IDL', $row->IDL),
 	    );
-            $this->load->view('imunisasi_bayi/tbl_imunisasi_bayi_form', $data);
+            $data['konten'] = 'imunisasi_bayi/tbl_imunisasi_bayi_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('imunisasi_bayi'));

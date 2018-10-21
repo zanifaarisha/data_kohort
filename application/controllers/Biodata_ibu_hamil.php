@@ -40,7 +40,8 @@ class Biodata_ibu_hamil extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('biodata_ibu_hamil/tbl_biodata_ibu_hamil_list', $data);
+        $data['konten'] = 'biodata_ibu_hamil/tbl_biodata_ibu_hamil_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -61,7 +62,8 @@ class Biodata_ibu_hamil extends CI_Controller
 		'tensi' => $row->tensi,
 		'id_resiko' => $row->id_resiko,
 	    );
-            $this->load->view('biodata_ibu_hamil/tbl_biodata_ibu_hamil_read', $data);
+            $data['konten'] = 'biodata_ibu_hamil/tbl_biodata_ibu_hamil_read';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('biodata_ibu_hamil'));
@@ -86,7 +88,8 @@ class Biodata_ibu_hamil extends CI_Controller
 	    'tensi' => set_value('tensi'),
 	    'id_resiko' => set_value('id_resiko'),
 	);
-        $this->load->view('biodata_ibu_hamil/tbl_biodata_ibu_hamil_form', $data);
+        $data['konten'] = 'biodata_ibu_hamil/tbl_biodata_ibu_hamil_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -137,7 +140,8 @@ class Biodata_ibu_hamil extends CI_Controller
 		'tensi' => set_value('tensi', $row->tensi),
 		'id_resiko' => set_value('id_resiko', $row->id_resiko),
 	    );
-            $this->load->view('biodata_ibu_hamil/tbl_biodata_ibu_hamil_form', $data);
+            $data['konten'] = 'biodata_ibu_hamil/tbl_biodata_ibu_hamil_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('biodata_ibu_hamil'));

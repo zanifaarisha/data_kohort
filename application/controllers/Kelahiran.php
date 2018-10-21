@@ -40,7 +40,8 @@ class Kelahiran extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('kelahiran/tbl_kelahiran_list', $data);
+        $data['konten'] = 'kelahiran/tbl_kelahiran_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -52,7 +53,9 @@ class Kelahiran extends CI_Controller
 		'lahir_mati' => $row->lahir_mati,
 		'lahir_hidup' => $row->lahir_hidup,
 	    );
-            $this->load->view('kelahiran/tbl_kelahiran_read', $data);
+            $data['konten'] = 'kelahiran/tbl_kelahiran_read';
+            $this->load->view('templates/admin/index', $data);
+            
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('kelahiran'));
@@ -68,7 +71,8 @@ class Kelahiran extends CI_Controller
 	    'lahir_mati' => set_value('lahir_mati'),
 	    'lahir_hidup' => set_value('lahir_hidup'),
 	);
-        $this->load->view('kelahiran/tbl_kelahiran_form', $data);
+        $data['konten'] = 'kelahiran/tbl_kelahiran_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -101,7 +105,8 @@ class Kelahiran extends CI_Controller
 		'lahir_mati' => set_value('lahir_mati', $row->lahir_mati),
 		'lahir_hidup' => set_value('lahir_hidup', $row->lahir_hidup),
 	    );
-            $this->load->view('kelahiran/tbl_kelahiran_form', $data);
+            $data['konten'] = 'kelahiran/tbl_kelahiran_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('kelahiran'));

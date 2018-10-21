@@ -40,7 +40,8 @@ class Tahun_kedua_bayi extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('tahun_kedua_bayi/tbl_tahun_kedua_bayi_list', $data);
+        $data['konten'] = 'tahun_kedua_bayi/tbl_tahun_kedua_bayi_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -62,7 +63,8 @@ class Tahun_kedua_bayi extends CI_Controller
 		'nov' => $row->nov,
 		'des' => $row->des,
 	    );
-            $this->load->view('tahun_kedua_bayi/tbl_tahun_kedua_bayi_read', $data);
+            $data['konten'] = 'tahun_kedua_bayi/tbl_tahun_kedua_bayi_read';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('tahun_kedua_bayi'));
@@ -88,7 +90,8 @@ class Tahun_kedua_bayi extends CI_Controller
 	    'nov' => set_value('nov'),
 	    'des' => set_value('des'),
 	);
-        $this->load->view('tahun_kedua_bayi/tbl_tahun_kedua_bayi_form', $data);
+        $data['konten'] = 'tahun_kedua_bayi/tbl_tahun_kedua_bayi_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -141,7 +144,8 @@ class Tahun_kedua_bayi extends CI_Controller
 		'nov' => set_value('nov', $row->nov),
 		'des' => set_value('des', $row->des),
 	    );
-            $this->load->view('tahun_kedua_bayi/tbl_tahun_kedua_bayi_form', $data);
+            $data['konten'] = 'tahun_kedua_bayi/tbl_tahun_kedua_bayi_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('tahun_kedua_bayi'));

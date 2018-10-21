@@ -40,7 +40,8 @@ class Masa_neonatal extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('masa_neonatal/tbl_masa_neonatal_list', $data);
+        $data['konten'] = 'masa_neonatal/tbl_masa_neonatal_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -52,7 +53,8 @@ class Masa_neonatal extends CI_Controller
 		'id_kunjungan_neonatal' => $row->id_kunjungan_neonatal,
 		'lahir_5jam' => $row->lahir_5jam,
 	    );
-            $this->load->view('masa_neonatal/tbl_masa_neonatal_read', $data);
+            $data['konten'] = 'masa_neonatal/tbl_masa_neonatal_read';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('masa_neonatal'));
@@ -68,7 +70,8 @@ class Masa_neonatal extends CI_Controller
 	    'id_kunjungan_neonatal' => set_value('id_kunjungan_neonatal'),
 	    'lahir_5jam' => set_value('lahir_5jam'),
 	);
-        $this->load->view('masa_neonatal/tbl_masa_neonatal_form', $data);
+        $data['konten'] = 'masa_neonatal/tbl_masa_neonatal_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -101,7 +104,8 @@ class Masa_neonatal extends CI_Controller
 		'id_kunjungan_neonatal' => set_value('id_kunjungan_neonatal', $row->id_kunjungan_neonatal),
 		'lahir_5jam' => set_value('lahir_5jam', $row->lahir_5jam),
 	    );
-            $this->load->view('masa_neonatal/tbl_masa_neonatal_form', $data);
+            $data['konten'] = 'masa_neonatal/tbl_masa_neonatal_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('masa_neonatal'));

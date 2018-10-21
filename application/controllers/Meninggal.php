@@ -40,7 +40,8 @@ class Meninggal extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('meninggal/tbl_meninggal_list', $data);
+        $data['konten'] = 'meninggal/tbl_meninggal_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -52,7 +53,8 @@ class Meninggal extends CI_Controller
 		'tgl_penyebab_kematian' => $row->tgl_penyebab_kematian,
 		'ket' => $row->ket,
 	    );
-            $this->load->view('meninggal/tbl_meninggal_read', $data);
+            $data['konten'] = 'meninggal/tbl_meninggal_read';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('meninggal'));
@@ -68,7 +70,8 @@ class Meninggal extends CI_Controller
 	    'tgl_penyebab_kematian' => set_value('tgl_penyebab_kematian'),
 	    'ket' => set_value('ket'),
 	);
-        $this->load->view('meninggal/tbl_meninggal_form', $data);
+        $data['konten'] = 'meninggal/tbl_meninggal_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -101,7 +104,8 @@ class Meninggal extends CI_Controller
 		'tgl_penyebab_kematian' => set_value('tgl_penyebab_kematian', $row->tgl_penyebab_kematian),
 		'ket' => set_value('ket', $row->ket),
 	    );
-            $this->load->view('meninggal/tbl_meninggal_form', $data);
+            $data['konten'] = 'meninggal/tbl_meninggal_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('meninggal'));

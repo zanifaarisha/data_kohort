@@ -40,7 +40,9 @@ class Biodata_bayi extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('biodata_bayi/tbl_biodata_bayi_list', $data);
+        $data['konten'] = 'biodata_bayi/tbl_biodata_bayi_list';
+        $this->load->view('templates/admin/index', $data);
+    }
     }
 
     public function read($id) 
@@ -60,7 +62,8 @@ class Biodata_bayi extends CI_Controller
 		'punya_buku_kia' => $row->punya_buku_kia,
 		'berat_panjang' => $row->berat_panjang,
 	    );
-            $this->load->view('biodata_bayi/tbl_biodata_bayi_read', $data);
+            $data['konten'] = 'biodata_bayi/tbl_biodata_bayi_read';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('biodata_bayi'));
@@ -84,7 +87,8 @@ class Biodata_bayi extends CI_Controller
 	    'punya_buku_kia' => set_value('punya_buku_kia'),
 	    'berat_panjang' => set_value('berat_panjang'),
 	);
-        $this->load->view('biodata_bayi/tbl_biodata_bayi_form', $data);
+        $data['konten'] = 'biodata_bayi/tbl_biodata_bayi_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -133,7 +137,8 @@ class Biodata_bayi extends CI_Controller
 		'punya_buku_kia' => set_value('punya_buku_kia', $row->punya_buku_kia),
 		'berat_panjang' => set_value('berat_panjang', $row->berat_panjang),
 	    );
-            $this->load->view('biodata_bayi/tbl_biodata_bayi_form', $data);
+            $data['konten'] = 'biodata_bayi/tbl_biodata_bayi_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('biodata_bayi'));

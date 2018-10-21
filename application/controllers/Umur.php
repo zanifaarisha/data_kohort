@@ -40,7 +40,9 @@ class Umur extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('umur/tbl_umur_list', $data);
+       
+        $data['konten']='umur/tbl_umur_list';
+        $this->load->view('templates/admin/index',$data);
     }
 
     public function read($id) 
@@ -52,7 +54,8 @@ class Umur extends CI_Controller
 		'umur_ibu' => $row->umur_ibu,
 		'kehamilan_ibu' => $row->kehamilan_ibu,
 	    );
-            $this->load->view('umur/tbl_umur_read', $data);
+            $data['konten']='umur/tbl_umur_read';
+            $this->load->view('templates/admin/index',$data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('umur'));
@@ -68,7 +71,9 @@ class Umur extends CI_Controller
 	    'umur_ibu' => set_value('umur_ibu'),
 	    'kehamilan_ibu' => set_value('kehamilan_ibu'),
 	);
-        $this->load->view('umur/tbl_umur_form', $data);
+        $data['konten']='umur/tbl_umur_form';
+        $this->load->view('templates/admin/index',$data);
+
     }
     
     public function create_action() 
@@ -101,7 +106,8 @@ class Umur extends CI_Controller
 		'umur_ibu' => set_value('umur_ibu', $row->umur_ibu),
 		'kehamilan_ibu' => set_value('kehamilan_ibu', $row->kehamilan_ibu),
 	    );
-            $this->load->view('umur/tbl_umur_form', $data);
+            $data['konten']='umur/tbl_umur_form';
+            $this->load->view('templates/admin/index',$data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('umur'));

@@ -40,7 +40,8 @@ class Pelayanan_balita extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('pelayanan_balita/tbl_pelayanan_balita_list', $data);
+        $data['konten'] = 'pelayanan_balita/tbl_pelayanan_balita_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -55,7 +56,8 @@ class Pelayanan_balita extends CI_Controller
 		'id_tahun_keempat' => $row->id_tahun_keempat,
 		'id_tahun_kelima' => $row->id_tahun_kelima,
 	    );
-            $this->load->view('pelayanan_balita/tbl_pelayanan_balita_read', $data);
+            $data['konten'] = 'pelayanan_balita/tbl_pelayanan_balita_read';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('pelayanan_balita'));
@@ -74,7 +76,8 @@ class Pelayanan_balita extends CI_Controller
 	    'id_tahun_keempat' => set_value('id_tahun_keempat'),
 	    'id_tahun_kelima' => set_value('id_tahun_kelima'),
 	);
-        $this->load->view('pelayanan_balita/tbl_pelayanan_balita_form', $data);
+        $data['konten'] = 'pelayanan_balita/tbl_pelayanan_balita_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -113,7 +116,8 @@ class Pelayanan_balita extends CI_Controller
 		'id_tahun_keempat' => set_value('id_tahun_keempat', $row->id_tahun_keempat),
 		'id_tahun_kelima' => set_value('id_tahun_kelima', $row->id_tahun_kelima),
 	    );
-            $this->load->view('pelayanan_balita/tbl_pelayanan_balita_form', $data);
+            $data['konten'] = 'pelayanan_balita/tbl_pelayanan_balita_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('pelayanan_balita'));

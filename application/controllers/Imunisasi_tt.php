@@ -40,7 +40,8 @@ class Imunisasi_tt extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('imunisasi_tt/tbl_imunisasi_tt_list', $data);
+        $data['konten'] = 'imunisasi_tt/tbl_imunisasi_tt_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -52,7 +53,8 @@ class Imunisasi_tt extends CI_Controller
 		'status_imunisasi_tt' => $row->status_imunisasi_tt,
 		'pemberian_imunisasi_tt' => $row->pemberian_imunisasi_tt,
 	    );
-            $this->load->view('imunisasi_tt/tbl_imunisasi_tt_read', $data);
+            $data['konten'] = 'imunisasi_tt/tbl_imunisasi_tt_read';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('imunisasi_tt'));
@@ -68,7 +70,8 @@ class Imunisasi_tt extends CI_Controller
 	    'status_imunisasi_tt' => set_value('status_imunisasi_tt'),
 	    'pemberian_imunisasi_tt' => set_value('pemberian_imunisasi_tt'),
 	);
-        $this->load->view('imunisasi_tt/tbl_imunisasi_tt_form', $data);
+        $data['konten'] = 'imunisasi_tt/tbl_imunisasi_tt_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -101,7 +104,8 @@ class Imunisasi_tt extends CI_Controller
 		'status_imunisasi_tt' => set_value('status_imunisasi_tt', $row->status_imunisasi_tt),
 		'pemberian_imunisasi_tt' => set_value('pemberian_imunisasi_tt', $row->pemberian_imunisasi_tt),
 	    );
-            $this->load->view('imunisasi_tt/tbl_imunisasi_tt_form', $data);
+            $data['konten'] = 'imunisasi_tt/tbl_imunisasi_tt_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('imunisasi_tt'));

@@ -40,7 +40,8 @@ class Kunjungan_ibu extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('kunjungan_ibu/tbl_kunjungan_ibu_list', $data);
+        $data['konten'] = 'kunjungan_ibu/tbl_kunjungan_ibu_list';
+        $this->load->view('templates/admin/index', $data);
     }
 
     public function read($id) 
@@ -52,7 +53,8 @@ class Kunjungan_ibu extends CI_Controller
 		'id_tahun_pertama' => $row->id_tahun_pertama,
 		'id_tahun_kedua' => $row->id_tahun_kedua,
 	    );
-            $this->load->view('kunjungan_ibu/tbl_kunjungan_ibu_read', $data);
+            $data['konten'] = 'kunjungan_ibu/tbl_kunjungan_ibu_read';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('kunjungan_ibu'));
@@ -68,7 +70,8 @@ class Kunjungan_ibu extends CI_Controller
 	    'id_tahun_pertama' => set_value('id_tahun_pertama'),
 	    'id_tahun_kedua' => set_value('id_tahun_kedua'),
 	);
-        $this->load->view('kunjungan_ibu/tbl_kunjungan_ibu_form', $data);
+        $data['konten'] = 'kunjungan_ibu/tbl_kunjungan_ibu_form';
+        $this->load->view('templates/admin/index', $data);
     }
     
     public function create_action() 
@@ -101,7 +104,8 @@ class Kunjungan_ibu extends CI_Controller
 		'id_tahun_pertama' => set_value('id_tahun_pertama', $row->id_tahun_pertama),
 		'id_tahun_kedua' => set_value('id_tahun_kedua', $row->id_tahun_kedua),
 	    );
-            $this->load->view('kunjungan_ibu/tbl_kunjungan_ibu_form', $data);
+            $data['konten'] = 'kunjungan_ibu/tbl_kunjungan_ibu_form';
+            $this->load->view('templates/admin/index', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('kunjungan_ibu'));
