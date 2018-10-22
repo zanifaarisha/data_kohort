@@ -40,7 +40,8 @@ class Vitamin_bayi extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('vitamin_bayi/tbl_vitamin_bayi_list', $data);
+        $data['konten']='vitamin_bayi/tbl_vitamin_bayi_list';
+        $this->load->view('templates/admin/index',$data);
     }
 
     public function read($id) 
@@ -51,7 +52,8 @@ class Vitamin_bayi extends CI_Controller
 		'id_vitamin' => $row->id_vitamin,
 		'vit_A' => $row->vit_A,
 	    );
-            $this->load->view('vitamin_bayi/tbl_vitamin_bayi_read', $data);
+            $data['konten']='vitamin_bayi/tbl_vitamin_bayi_read';
+            $this->load->view('templates/admin/index',$data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('vitamin_bayi'));
@@ -66,7 +68,8 @@ class Vitamin_bayi extends CI_Controller
 	    'id_vitamin' => set_value('id_vitamin'),
 	    'vit_A' => set_value('vit_A'),
 	);
-        $this->load->view('vitamin_bayi/tbl_vitamin_bayi_form', $data);
+        $data['konten']='vitamin_bayi/tbl_vitamin_bayi_form';
+        $this->load->view('templates/admin/index',$data);
     }
     
     public function create_action() 
@@ -97,7 +100,8 @@ class Vitamin_bayi extends CI_Controller
 		'id_vitamin' => set_value('id_vitamin', $row->id_vitamin),
 		'vit_A' => set_value('vit_A', $row->vit_A),
 	    );
-            $this->load->view('vitamin_bayi/tbl_vitamin_bayi_form', $data);
+            $data['konten']='vitamin_bayi/tbl_vitamin_bayi_form';
+            $this->load->view('templates/admin/index',$data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('vitamin_bayi'));
