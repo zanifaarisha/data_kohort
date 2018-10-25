@@ -36,7 +36,7 @@ class Biodata_bayi_model extends CI_Model
 	$this->db->or_like('nik', $q);
 	$this->db->or_like('nama_bayi', $q);
 	$this->db->or_like('tgl_lahir', $q);
-	$this->db->or_like('jenis kelamin', $q);
+	$this->db->or_like('jenis_kelamin', $q);
 	$this->db->or_like('nama_ibu', $q);
 	$this->db->or_like('alamat', $q);
 	$this->db->or_like('no_tlp', $q);
@@ -54,7 +54,7 @@ class Biodata_bayi_model extends CI_Model
 	$this->db->or_like('nik', $q);
 	$this->db->or_like('nama_bayi', $q);
 	$this->db->or_like('tgl_lahir', $q);
-	$this->db->or_like('jenis kelamin', $q);
+	$this->db->or_like('jenis_kelamin', $q);
 	$this->db->or_like('nama_ibu', $q);
 	$this->db->or_like('alamat', $q);
 	$this->db->or_like('no_tlp', $q);
