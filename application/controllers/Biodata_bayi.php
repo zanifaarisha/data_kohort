@@ -42,7 +42,7 @@ class Biodata_bayi extends CI_Controller
         );
         $data['konten'] = 'biodata_bayi/tbl_biodata_bayi_list';
         $this->load->view('templates/admin/index', $data);
-    }
+    
     }
 
     public function read($id) 
@@ -191,7 +191,11 @@ class Biodata_bayi extends CI_Controller
 	$this->form_validation->set_rules('nik', 'nik', 'trim|required');
 	$this->form_validation->set_rules('nama_bayi', 'nama bayi', 'trim|required');
 	$this->form_validation->set_rules('tgl_lahir', 'tgl lahir', 'trim|required');
+<<<<<<< HEAD
 	$this->form_validation->set_rules('jenis_kelamin', 'jenis kelamin', 'trim|required');
+=======
+	$this->form_validation->set_rules('jenis_kelamin', 'jenis_kelamin', 'trim|required');
+>>>>>>> 270640d6e21110a773cda91a7453a4e6ea5beb87
 	$this->form_validation->set_rules('nama_ibu', 'nama ibu', 'trim|required');
 	$this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
 	$this->form_validation->set_rules('no_tlp', 'no tlp', 'trim|required');
