@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2018 at 05:49 AM
+-- Generation Time: Oct 31, 2018 at 03:31 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tbl_anak_prasekolah` (
   `id_anak_prasekolah` int(11) NOT NULL,
-  `66 bulan` varchar(5) NOT NULL,
-  `72 bulan` varchar(5) NOT NULL
+  `enam_enam_bulan` varchar(5) NOT NULL,
+  `tujuh_dua_bulan` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -63,7 +63,7 @@ CREATE TABLE `tbl_biodata_bayi` (
   `nik` varchar(50) NOT NULL,
   `nama_bayi` varchar(100) NOT NULL,
   `tgl_lahir` date NOT NULL,
-  `jenis kelamin` enum('L','P','','') NOT NULL,
+  `jenis_kelamin` enum('L','P','','') NOT NULL,
   `nama_ibu` varchar(100) NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `no_tlp` varchar(15) NOT NULL,
@@ -100,11 +100,11 @@ CREATE TABLE `tbl_biodata_ibu_hamil` (
 
 CREATE TABLE `tbl_imunisasi_bayi` (
   `id_imunisasi` int(11) NOT NULL,
-  `hb-7hr` varchar(10) NOT NULL,
-  `polio 1` varchar(10) NOT NULL,
-  `polio 2` varchar(10) NOT NULL,
-  `polio 3` varchar(10) NOT NULL,
-  `polio 4` varchar(10) NOT NULL,
+  `hb_tujuh_hr` varchar(10) NOT NULL,
+  `polio_satu` varchar(10) NOT NULL,
+  `polio_dua` varchar(10) NOT NULL,
+  `polio_tiga` varchar(10) NOT NULL,
+  `polio_empat` varchar(10) NOT NULL,
   `campak` varchar(10) NOT NULL,
   `IDL` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -215,7 +215,7 @@ CREATE TABLE `tbl_kunjungan_neonatal` (
 CREATE TABLE `tbl_masa_neonatal` (
   `id_masa_neonatal` int(11) NOT NULL,
   `id_kunjungan_neonatal` int(10) NOT NULL,
-  `lahir_5jam` varchar(50) NOT NULL
+  `lahir_lima_jam` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -226,7 +226,7 @@ CREATE TABLE `tbl_masa_neonatal` (
 
 CREATE TABLE `tbl_meninggal` (
   `id_meninggal` int(11) NOT NULL,
-  `tgl _penyebab_kematian` varchar(100) NOT NULL,
+  `tgl_penyebab_kematian` varchar(100) NOT NULL,
   `ket` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -250,9 +250,9 @@ CREATE TABLE `tbl_nama` (
 
 CREATE TABLE `tbl_nifas` (
   `id_nifas` int(11) NOT NULL,
-  `6jam_3hr` varchar(50) NOT NULL,
-  `4_28hr` varchar(50) NOT NULL,
-  `29_42hr` varchar(50) NOT NULL,
+  `enam_jam_tiga_hr` varchar(50) NOT NULL,
+  `empat_duadelapan_hr` varchar(50) NOT NULL,
+  `duasembilan_empatdua_hr` varchar(50) NOT NULL,
   `ket` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -789,7 +789,7 @@ ALTER TABLE `tbl_meninggal`
 -- AUTO_INCREMENT for table `tbl_nama`
 --
 ALTER TABLE `tbl_nama`
-  MODIFY `id_nama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_nama` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbl_nifas`
 --
