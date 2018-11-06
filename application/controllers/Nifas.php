@@ -109,7 +109,7 @@ class Nifas extends CI_Controller
 		'id_nifas' => set_value('id_nifas', $row->id_nifas),
 		'enam_jam_tiga_hr' => set_value('enam_jam_tiga_hr', $row->enam_jam_tiga_hr),
 		'empat_duadelapan_hr' => set_value('empat_duadelapan_hr', $row->empat_duadelapan_hr),
-		'duasembilan_empatdua_hr' => set_value('duasembilan_empatdua_hr', $row->duasembilan_empatdua_hr),
+		'duasembilan_empatdua_hr' => set_value('duasembilan_empatdua_hr', $row->duasembilan_empatdua_hr ),
 		'ket' => set_value('ket', $row->ket),
 	    );
             $data['konten'] = 'nifas/tbl_nifas_form';
