@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 31, 2018 at 03:31 AM
+-- Generation Time: Nov 17, 2018 at 02:48 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -19,6 +19,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `dbkohort`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_admin`
+--
+
+CREATE TABLE `tbl_admin` (
+  `id_admin` int(11) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `nama` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_admin`
+--
+
+INSERT INTO `tbl_admin` (`id_admin`, `username`, `password`, `nama`) VALUES
+(1, 'admin', 'admin', 'zanifah');
 
 -- --------------------------------------------------------
 
@@ -172,6 +192,90 @@ CREATE TABLE `tbl_kematian_post_natal` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_kohort_anak`
+--
+
+CREATE TABLE `tbl_kohort_anak` (
+  `id` int(11) NOT NULL,
+  `nama_pasien` varchar(50) NOT NULL,
+  `nilai_anc` int(50) NOT NULL,
+  `status_nifas` varchar(30) NOT NULL,
+  `tgl_nifas` date NOT NULL,
+  `nama_anak` varchar(50) NOT NULL,
+  `anak_ke` varchar(10) NOT NULL,
+  `berat_badan_anak` varchar(20) NOT NULL,
+  `tinggi_anak` varchar(20) NOT NULL,
+  `gizi_anak` varchar(30) NOT NULL,
+  `pemberian_asi_exklusif` varchar(20) NOT NULL,
+  `imunisasi_anak` varchar(20) NOT NULL,
+  `pemberian_vit_a` varchar(20) NOT NULL,
+  `keterangan_anak` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_kohort_ibu`
+--
+
+CREATE TABLE `tbl_kohort_ibu` (
+  `id` int(11) NOT NULL,
+  `pemeriksaan_ke` varchar(10) NOT NULL,
+  `tgl_pemeriksaan` date NOT NULL,
+  `keluhan_sekarang` varchar(200) NOT NULL,
+  `tekanan_darah` varchar(10) NOT NULL,
+  `berat_badan` varchar(10) NOT NULL,
+  `umur_kehamilan` varchar(10) NOT NULL,
+  `tinggi_fundus` varchar(10) NOT NULL,
+  `letak_janin` varchar(15) NOT NULL,
+  `tingkat_hipertensi` varchar(10) NOT NULL,
+  `tingkat_kesadaran` varchar(10) NOT NULL,
+  `detak_jantung` varchar(10) NOT NULL,
+  `lingkar_perut` varchar(10) NOT NULL,
+  `kaki_bengkak` varchar(20) NOT NULL,
+  `kondisi_badan` varchar(20) NOT NULL,
+  `nilai_anc` int(100) NOT NULL,
+  `hasil_pemeriksaan` varchar(10) NOT NULL,
+  `tindakan` varchar(200) NOT NULL,
+  `saran_bidan` varchar(200) NOT NULL,
+  `tgl_pem_berikutnya` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_kohort_nifas`
+--
+
+CREATE TABLE `tbl_kohort_nifas` (
+  `id` int(11) NOT NULL,
+  `nama_pasien` int(50) NOT NULL,
+  `kondisi_ibu_nifas` varchar(10) NOT NULL,
+  `tekanan_darah` varchar(10) NOT NULL,
+  `suhu_tubuh` varchar(10) NOT NULL,
+  `respirasi` varchar(10) NOT NULL,
+  `nadi` varchar(10) NOT NULL,
+  `pendarahan_pervigma` varchar(20) NOT NULL,
+  `kondisi_perineum` varchar(10) NOT NULL,
+  `tanda_infeksi` varchar(10) NOT NULL,
+  `kontraksi_rahim` varchar(10) NOT NULL,
+  `tinggi_fundus_uteri` varchar(10) NOT NULL,
+  `payudara` varchar(20) NOT NULL,
+  `pemberian_asi` varchar(20) NOT NULL,
+  `pemberian_vit_a` varchar(10) NOT NULL,
+  `layanan_kontrasepsi_pasapersalinan` varchar(10) NOT NULL,
+  `kompilkasi` varchar(10) NOT NULL,
+  `bab` varchar(10) NOT NULL,
+  `bak` varchar(10) NOT NULL,
+  `kesehatan_anak` varchar(20) NOT NULL,
+  `produksi_asi` varchar(10) NOT NULL,
+  `tindakan` varchar(200) NOT NULL,
+  `saran_bidan` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_kunjungan_bayi`
 --
 
@@ -254,6 +358,50 @@ CREATE TABLE `tbl_nifas` (
   `empat_duadelapan_hr` varchar(50) NOT NULL,
   `duasembilan_empatdua_hr` varchar(50) NOT NULL,
   `ket` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_pasien`
+--
+
+CREATE TABLE `tbl_pasien` (
+  `id` int(11) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `nama_pasien` varchar(50) NOT NULL,
+  `nama_suami` varchar(50) NOT NULL,
+  `alamat_pasien` varchar(50) NOT NULL,
+  `tgl_lahir_pasien` date NOT NULL,
+  `umur_pasien` varchar(10) NOT NULL,
+  `jarak_kehamilan` varchar(10) NOT NULL,
+  `no_tlp` varchar(15) NOT NULL,
+  `pendidikan_terakhir` varchar(10) NOT NULL,
+  `agama` varchar(10) NOT NULL,
+  `gol_darah` varchar(10) NOT NULL,
+  `pekerjaan` varchar(20) NOT NULL,
+  `no_ktp` varchar(20) NOT NULL,
+  `perkawinan_ke` varchar(5) NOT NULL,
+  `tgl_nikah` date NOT NULL,
+  `tgl_persalinan_terakhir` date NOT NULL,
+  `hamil_ke` varchar(10) NOT NULL,
+  `tgl_hpht` date NOT NULL,
+  `lingkar_lengan_atas` varchar(10) NOT NULL,
+  `tinggi_badan` varchar(10) NOT NULL,
+  `penggunaan_kb_sebelum_hamil` varchar(10) NOT NULL,
+  `riwayat_penyakit` varchar(10) NOT NULL,
+  `jenis_penyakit` varchar(20) NOT NULL,
+  `riwayat_alergi` varchar(20) NOT NULL,
+  `pernah_hamil_kembar` varchar(10) NOT NULL,
+  `pernah_hamil_lebih_bulan` varchar(10) NOT NULL,
+  `pernah_letak_sungsang` varchar(10) NOT NULL,
+  `pernah_letak_lintang` varchar(10) NOT NULL,
+  `pernah_kejang` varchar(10) NOT NULL,
+  `jumlah_anak` varchar(5) NOT NULL,
+  `umur_anak_terakhir` varchar(5) NOT NULL,
+  `jumlah_lahir_mati` varchar(5) NOT NULL,
+  `status_imunisasi` varchar(10) NOT NULL,
+  `cara_persalinan_terakhir` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -508,6 +656,26 @@ CREATE TABLE `tbl_umur` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_user`
+--
+
+CREATE TABLE `tbl_user` (
+  `id_user` int(11) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `nama` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`id_user`, `username`, `password`, `nama`) VALUES
+(1, 'user', 'user', 'zanifah');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_vitamin_bayi`
 --
 
@@ -519,6 +687,12 @@ CREATE TABLE `tbl_vitamin_bayi` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  ADD PRIMARY KEY (`id_admin`);
 
 --
 -- Indexes for table `tbl_anak_prasekolah`
@@ -581,6 +755,24 @@ ALTER TABLE `tbl_kematian_post_natal`
   ADD PRIMARY KEY (`id_kematian`);
 
 --
+-- Indexes for table `tbl_kohort_anak`
+--
+ALTER TABLE `tbl_kohort_anak`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_kohort_ibu`
+--
+ALTER TABLE `tbl_kohort_ibu`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_kohort_nifas`
+--
+ALTER TABLE `tbl_kohort_nifas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_kunjungan_bayi`
 --
 ALTER TABLE `tbl_kunjungan_bayi`
@@ -621,6 +813,12 @@ ALTER TABLE `tbl_nama`
 --
 ALTER TABLE `tbl_nifas`
   ADD PRIMARY KEY (`id_nifas`);
+
+--
+-- Indexes for table `tbl_pasien`
+--
+ALTER TABLE `tbl_pasien`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_pelayanan_balita`
@@ -701,6 +899,12 @@ ALTER TABLE `tbl_umur`
   ADD PRIMARY KEY (`id_umur`);
 
 --
+-- Indexes for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD PRIMARY KEY (`id_user`);
+
+--
 -- Indexes for table `tbl_vitamin_bayi`
 --
 ALTER TABLE `tbl_vitamin_bayi`
@@ -710,6 +914,11 @@ ALTER TABLE `tbl_vitamin_bayi`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tbl_anak_prasekolah`
 --
@@ -761,6 +970,21 @@ ALTER TABLE `tbl_kelahiran`
 ALTER TABLE `tbl_kematian_post_natal`
   MODIFY `id_kematian` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `tbl_kohort_anak`
+--
+ALTER TABLE `tbl_kohort_anak`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tbl_kohort_ibu`
+--
+ALTER TABLE `tbl_kohort_ibu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tbl_kohort_nifas`
+--
+ALTER TABLE `tbl_kohort_nifas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `tbl_kunjungan_bayi`
 --
 ALTER TABLE `tbl_kunjungan_bayi`
@@ -795,6 +1019,11 @@ ALTER TABLE `tbl_nama`
 --
 ALTER TABLE `tbl_nifas`
   MODIFY `id_nifas` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tbl_pasien`
+--
+ALTER TABLE `tbl_pasien`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbl_pelayanan_balita`
 --
@@ -860,6 +1089,11 @@ ALTER TABLE `tbl_tahun_pertama_ibu`
 --
 ALTER TABLE `tbl_umur`
   MODIFY `id_umur` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tbl_vitamin_bayi`
 --
