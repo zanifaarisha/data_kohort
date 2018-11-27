@@ -29,17 +29,17 @@
 				<div class="container">
 					<div class="row">
 						<div class="single-feature col-lg-4">
-							<img class="img-fluid" src="img/f1.png" alt="">
+							<img class="img-fluid" src="<?php echo base_url() ?>templates/img/f1.png" alt="">
 							<h4>Online Support</h4>
 							<p>Lorem ipsum dolor sit amet, consecteturadipis icing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						</div>
 						<div class="single-feature col-lg-4">
-							<img class="img-fluid" src="img/f2.png" alt="">
+							<img class="img-fluid" src="<?php echo base_url() ?>templates/img/f2.png" alt="">
 							<h4>24/7 Round the Clock</h4>
 							<p>Lorem ipsum dolor sit amet, consecteturadipis icing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						</div>
 						<div class="single-feature col-lg-4">
-							<img class="img-fluid" src="img/f3.png" alt="">
+							<img class="img-fluid" src="<?php echo base_url() ?>templates/img/f3.png" alt="">
 							<h4>Handling All Issues</h4>
 							<p>Lorem ipsum dolor sit amet, consecteturadipis icing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						</div>												
@@ -64,7 +64,7 @@
 						<div class="active-testimonial">
 							<div class="single-testimonial item d-flex flex-row">
 								<div class="thumb">
-									<img class="img-fluid" src="img/user1.png" alt="">
+									<img class="img-fluid" src="<?php echo base_url() ?>templates/img/user1.png" alt="">
 								</div>
 								<div class="desc">
 									<p>
@@ -76,7 +76,7 @@
 							</div>
 							<div class="single-testimonial item d-flex flex-row">
 								<div class="thumb">
-									<img class="img-fluid" src="img/user2.png" alt="">
+									<img class="img-fluid" src="<?php echo base_url() ?>templates/img/user2.png" alt="">
 								</div>
 								<div class="desc">
 									<p>
@@ -106,32 +106,32 @@
 							<div class="offer-wrap flex-row d-flex row">
 								<div class="col-4">
 									<div class="single-offer mb-30">
-										<a href="#"></a><img class="img-fluid" src="img/o1.png" alt=""></d>
+										<a href="#"></a><img class="img-fluid" src="<?php echo base_url() ?>templates/img/o1.png" alt=""></d>
 									</div> 
 								</div>
 								<div class="col-4">
 									<div class="single-offer mb-30">
-										<a href="#"></a><img class="img-fluid" src="img/o2.png" alt=""></d>
+										<a href="#"></a><img class="img-fluid" src="<?php echo base_url() ?>templates/img/o2.png" alt=""></d>
 									</div> 
 								</div>
 								<div class="col-4">
 									<div class="single-offer mb-30">
-										<a href="#"></a><img class="img-fluid" src="img/o3.png" alt=""></d>
+										<a href="#"></a><img class="img-fluid" src="<?php echo base_url() ?>templates/img/o3.png" alt=""></d>
 									</div> 
 								</div>
 								<div class="col-4">
 									<div class="single-offer">
-										<a href="#"></a><img class="img-fluid" src="img/o4.png" alt=""></d>
+										<a href="#"></a><img class="img-fluid" src="<?php echo base_url() ?>templates/img/o4.png" alt=""></d>
 									</div> 
 								</div>
 								<div class="col-4">
 									<div class="single-offer">
-										<a href="#"></a><img class="img-fluid" src="img/o5.png" alt=""></d>
+										<a href="#"></a><img class="img-fluid" src="<?php echo base_url() ?>templates/img/o5.png" alt=""></d>
 									</div> 
 								</div>
 								<div class="col-4">
 									<div class="single-offer">
-										<a href="#"></a><img class="img-fluid" src="img/o6.png" alt=""></d>
+										<a href="#"></a><img class="img-fluid" src="<?php echo base_url() ?>templates/img/o6.png" alt=""></d>
 									</div> 
 								</div>								
 							</div>																	
@@ -249,7 +249,7 @@
 				<div class="container-fluid">
 					<div class="row d-flex justify-content-end align-items-center">
 						<div class="col-lg-6 col-md-12 info-left no-padding">
-							<img class="img-fluid" src="img/info-img.jpg" alt="">
+							<img class="img-fluid" src="<?php echo base_url() ?>templates/img/info-img.jpg" alt="">
 						</div>
 						<div class="col-lg-6 col-md-12 info-right no-padding">
 							<h1>Responsible <br>
@@ -281,9 +281,9 @@
 						</div>
 						<div class="col-lg-6 about-right no-padding relative">
 							<div class="overlay overlay-bg"></div>
-							<a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="play-btn">	<img class="play" src="img/play-btn.png" alt="">
+							<a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="play-btn">	<img class="play" src="<?php echo base_url() ?>templates/img/play-btn.png" alt="">
 							</a>							
-							<img class="main img-fluid" src="img/video-bg.jpg" alt="">
+							<img class="main img-fluid" src="<?php echo base_url() ?>templates/img/video-bg.jpg" alt="">
 						</div>
 					</div>
 				</div>	
@@ -295,19 +295,19 @@
 				<div class="container">
 					<div class="row logo-wrap">
 							<a class="col single-img" href="#">
-								<img class="d-block mx-auto" src="img/l1.png" alt="">
+								<img class="d-block mx-auto" src="<?php echo base_url() ?>templates/img/l1.png" alt="">
 							</a>
 							<a class="col single-img" href="#">
-								<img class="d-block mx-auto" src="img/l2.png" alt="">
+								<img class="d-block mx-auto" src="<?php echo base_url() ?>templates/img/l2.png" alt="">
 							</a>
 							<a class="col single-img" href="#">
-								<img class="d-block mx-auto" src="img/l3.png" alt="">
+								<img class="d-block mx-auto" src="<?php echo base_url() ?>templates/img/l3.png" alt="">
 							</a>
 							<a class="col single-img" href="#">
-								<img class="d-block mx-auto" src="img/l4.png" alt="">
+								<img class="d-block mx-auto" src="<?php echo base_url() ?>templates/img/l4.png" alt="">
 							</a>
 							<a class="col single-img" href="#">
-								<img class="d-block mx-auto" src="img/l5.png" alt="">
+								<img class="d-block mx-auto" src="<?php echo base_url() ?>templates/img/l5.png" alt="">
 							</a>
 					</div>	
 				</div>	

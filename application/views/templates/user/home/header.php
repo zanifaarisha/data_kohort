@@ -21,12 +21,12 @@
 			<!--
 			CSS
 			============================================= -->
-			<link rel="stylesheet" href="css/linearicons.css">
-			<link rel="stylesheet" href="css/font-awesome.min.css">
-			<link rel="stylesheet" href="css/bootstrap.css">
-			<link rel="stylesheet" href="css/magnific-popup.css">
-			<link rel="stylesheet" href="css/nice-select.css">					
-			<link rel="stylesheet" href="css/animate.min.css">
-			<link rel="stylesheet" href="css/owl.carousel.css">
-			<link rel="stylesheet" href="css/main.css">
+			<link rel="stylesheet" href="<?php echo base_url() ?>templates/css/linearicons.css">
+			<link rel="stylesheet" href="<?php echo base_url() ?>templates/css/font-awesome.min.css">
+			<link rel="stylesheet" href="<?php echo base_url() ?>templates/css/bootstrap.css">
+			<link rel="stylesheet" href="<?php echo base_url() ?>templates/css/magnific-popup.css">
+			<link rel="stylesheet" href="<?php echo base_url() ?>templates/css/nice-select.css">					
+			<link rel="stylesheet" href="<?php echo base_url() ?>templates/css/animate.min.css">
+			<link rel="stylesheet" href="<?php echo base_url() ?>templates/css/owl.carousel.css">
+			<link rel="stylesheet" href="<?php echo base_url() ?>templates/css/main.css">
 		</head>

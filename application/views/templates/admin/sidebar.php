@@ -87,6 +87,20 @@
             <li><a href="<?php echo site_url() ?>tahun_kelima"><i class="fa fa-circle-o"></i> Tahun Kelima</a></li>
             <li><a href="<?php echo site_url() ?>pelayanan_balita"><i class="fa fa-circle-o"></i> Pelayanan Balita</a></li>
             <li><a href="<?php echo site_url() ?>meninggal"><i class="fa fa-circle-o"></i> meninggal</a></li>
+          </ul>
+        </li>
+
+         <li class="active treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Pengaturan</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo site_url() ?>administrator"><i class="fa fa-circle-o"></i> Data Admin</a></li>
+          </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

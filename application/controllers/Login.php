@@ -37,7 +37,7 @@ class Login extends CI_Controller {
 
 	public function logout(){
 		$data = array('username','password');
-		// $this->session->unset_userdata($data);
+		$this->session->unset_userdata($data);
 		redirect('login');
 		}
 
