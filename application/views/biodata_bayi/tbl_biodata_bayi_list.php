@@ -41,7 +41,6 @@
 		<th>Nama Ibu</th>
 		<th>Alamat</th>
 		<th>No Tlp</th>
-		<th>Punya Buku Kia</th>
 		<th>Berat Panjang</th>
 		<th>Action</th>
             </tr><?php
@@ -58,7 +57,6 @@
 			<td><?php echo $biodata_bayi->nama_ibu ?></td>
 			<td><?php echo $biodata_bayi->alamat ?></td>
 			<td><?php echo $biodata_bayi->no_tlp ?></td>
-			<td><?php echo $biodata_bayi->punya_buku_kia ?></td>
 			<td><?php echo $biodata_bayi->berat_panjang ?></td>
 			<td style="text-align:center" width="200px">
 				<?php 

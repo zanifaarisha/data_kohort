@@ -41,7 +41,6 @@
 		<th>Nama Ibu</th>
 		<th>Alamat</th>
 		<th>No Tlp</th>
-		<th>Punya Buku Kia</th>
 		<th>Action</th>
             </tr><?php
             foreach ($biodata_balita_data as $biodata_balita)
@@ -57,7 +56,6 @@
 			<td><?php echo $biodata_balita->nama_ibu ?></td>
 			<td><?php echo $biodata_balita->alamat ?></td>
 			<td><?php echo $biodata_balita->no_tlp ?></td>
-			<td><?php echo $biodata_balita->punya_buku_kia ?></td>
 			<td style="text-align:center" width="200px">
 				<?php 
 				echo anchor(site_url('biodata_balita/read/'.$biodata_balita->id_balita),'Read'); 

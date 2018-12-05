@@ -59,7 +59,6 @@ class Biodata_bayi extends CI_Controller
 		'nama_ibu' => $row->nama_ibu,
 		'alamat' => $row->alamat,
 		'no_tlp' => $row->no_tlp,
-		'punya_buku_kia' => $row->punya_buku_kia,
 		'berat_panjang' => $row->berat_panjang,
 	    );
             $data['konten'] = 'biodata_bayi/tbl_biodata_bayi_read';
@@ -84,7 +83,6 @@ class Biodata_bayi extends CI_Controller
 	    'nama_ibu' => set_value('nama_ibu'),
 	    'alamat' => set_value('alamat'),
 	    'no_tlp' => set_value('no_tlp'),
-	    'punya_buku_kia' => set_value('punya_buku_kia'),
 	    'berat_panjang' => set_value('berat_panjang'),
 	);
         $data['konten'] = 'biodata_bayi/tbl_biodata_bayi_form';
@@ -107,7 +105,6 @@ class Biodata_bayi extends CI_Controller
 		'nama_ibu' => $this->input->post('nama_ibu',TRUE),
 		'alamat' => $this->input->post('alamat',TRUE),
 		'no_tlp' => $this->input->post('no_tlp',TRUE),
-		'punya_buku_kia' => $this->input->post('punya_buku_kia',TRUE),
 		'berat_panjang' => $this->input->post('berat_panjang',TRUE),
 	    );
 
@@ -134,7 +131,6 @@ class Biodata_bayi extends CI_Controller
 		'nama_ibu' => set_value('nama_ibu', $row->nama_ibu),
 		'alamat' => set_value('alamat', $row->alamat),
 		'no_tlp' => set_value('no_tlp', $row->no_tlp),
-		'punya_buku_kia' => set_value('punya_buku_kia', $row->punya_buku_kia),
 		'berat_panjang' => set_value('berat_panjang', $row->berat_panjang),
 	    );
             $data['konten'] = 'biodata_bayi/tbl_biodata_bayi_form';
@@ -161,7 +157,6 @@ class Biodata_bayi extends CI_Controller
 		'nama_ibu' => $this->input->post('nama_ibu',TRUE),
 		'alamat' => $this->input->post('alamat',TRUE),
 		'no_tlp' => $this->input->post('no_tlp',TRUE),
-		'punya_buku_kia' => $this->input->post('punya_buku_kia',TRUE),
 		'berat_panjang' => $this->input->post('berat_panjang',TRUE),
 	    );
 
@@ -191,15 +186,10 @@ class Biodata_bayi extends CI_Controller
 	$this->form_validation->set_rules('nik', 'nik', 'trim|required');
 	$this->form_validation->set_rules('nama_bayi', 'nama bayi', 'trim|required');
 	$this->form_validation->set_rules('tgl_lahir', 'tgl lahir', 'trim|required');
-<<<<<<< HEAD
-	$this->form_validation->set_rules('jenis_kelamin', 'jenis kelamin', 'trim|required');
-=======
 	$this->form_validation->set_rules('jenis_kelamin', 'jenis_kelamin', 'trim|required');
->>>>>>> 270640d6e21110a773cda91a7453a4e6ea5beb87
 	$this->form_validation->set_rules('nama_ibu', 'nama ibu', 'trim|required');
 	$this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
 	$this->form_validation->set_rules('no_tlp', 'no tlp', 'trim|required');
-	$this->form_validation->set_rules('punya_buku_kia', 'punya buku kia', 'trim|required');
 	$this->form_validation->set_rules('berat_panjang', 'berat panjang', 'trim|required');
 
 	$this->form_validation->set_rules('id_bayi', 'id_bayi', 'trim');

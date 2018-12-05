@@ -9,7 +9,6 @@
 	    <tr><td>Nama Ibu</td><td><?php echo $nama_ibu; ?></td></tr>
 	    <tr><td>Alamat</td><td><?php echo $alamat; ?></td></tr>
 	    <tr><td>No Tlp</td><td><?php echo $no_tlp; ?></td></tr>
-	    <tr><td>Punya Buku Kia</td><td><?php echo $punya_buku_kia; ?></td></tr>
 	    <tr><td>Berat Panjang</td><td><?php echo $berat_panjang; ?></td></tr>
 	    <tr><td></td><td><a href="<?php echo site_url('biodata_bayi') ?>" class="btn btn-default">Cancel</a></td></tr>
 	</table>

@@ -58,7 +58,6 @@ class Biodata_balita extends CI_Controller
 		'nama_ibu' => $row->nama_ibu,
 		'alamat' => $row->alamat,
 		'no_tlp' => $row->no_tlp,
-		'punya_buku_kia' => $row->punya_buku_kia,
 	    );
             $data['konten'] = 'biodata_balita/tbl_biodata_balita_read';
             $this->load->view('templates/admin/index', $data);
@@ -82,7 +81,6 @@ class Biodata_balita extends CI_Controller
 	    'nama_ibu' => set_value('nama_ibu'),
 	    'alamat' => set_value('alamat'),
 	    'no_tlp' => set_value('no_tlp'),
-	    'punya_buku_kia' => set_value('punya_buku_kia'),
 	);
         $data['konten'] = 'biodata_balita/tbl_biodata_balita_form';
         $this->load->view('templates/admin/index', $data);
@@ -104,7 +102,6 @@ class Biodata_balita extends CI_Controller
 		'nama_ibu' => $this->input->post('nama_ibu',TRUE),
 		'alamat' => $this->input->post('alamat',TRUE),
 		'no_tlp' => $this->input->post('no_tlp',TRUE),
-		'punya_buku_kia' => $this->input->post('punya_buku_kia',TRUE),
 	    );
 
             $this->Biodata_balita_model->insert($data);
@@ -130,7 +127,6 @@ class Biodata_balita extends CI_Controller
 		'nama_ibu' => set_value('nama_ibu', $row->nama_ibu),
 		'alamat' => set_value('alamat', $row->alamat),
 		'no_tlp' => set_value('no_tlp', $row->no_tlp),
-		'punya_buku_kia' => set_value('punya_buku_kia', $row->punya_buku_kia),
 	    );
             $data['konten'] = 'biodata_balita/tbl_biodata_balita_form';
             $this->load->view('templates/admin/index', $data);
@@ -156,7 +152,6 @@ class Biodata_balita extends CI_Controller
 		'nama_ibu' => $this->input->post('nama_ibu',TRUE),
 		'alamat' => $this->input->post('alamat',TRUE),
 		'no_tlp' => $this->input->post('no_tlp',TRUE),
-		'punya_buku_kia' => $this->input->post('punya_buku_kia',TRUE),
 	    );
 
             $this->Biodata_balita_model->update($this->input->post('id_balita', TRUE), $data);
@@ -189,7 +184,6 @@ class Biodata_balita extends CI_Controller
 	$this->form_validation->set_rules('nama_ibu', 'nama ibu', 'trim|required');
 	$this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
 	$this->form_validation->set_rules('no_tlp', 'no tlp', 'trim|required');
-	$this->form_validation->set_rules('punya_buku_kia', 'punya buku kia', 'trim|required');
 
 	$this->form_validation->set_rules('id_balita', 'id_balita', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');

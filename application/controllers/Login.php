@@ -23,12 +23,14 @@ class Login extends CI_Controller {
 			if (!$check) {
 				redirect('login');
 			}else{
-				$data = array(
-						'username' => $username,
-						'password' => $password
-						
-				);
 
+				$data = array(
+					'username' => $username,
+					'nama' => $check->nama,
+					'level' => 'admin',
+				);
+				
+				$this->session->set_userdata( $data );
 				redirect('welcome');
 			}
 
@@ -36,7 +38,7 @@ class Login extends CI_Controller {
 	}
 
 	public function logout(){
-		$data = array('username','password');
+		$data = array('username','password', 'level');
 		$this->session->unset_userdata($data);
 		redirect('login');
 		}

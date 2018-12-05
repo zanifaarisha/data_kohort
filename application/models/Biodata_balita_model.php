@@ -40,7 +40,6 @@ class Biodata_balita_model extends CI_Model
 	$this->db->or_like('nama_ibu', $q);
 	$this->db->or_like('alamat', $q);
 	$this->db->or_like('no_tlp', $q);
-	$this->db->or_like('punya_buku_kia', $q);
 	$this->db->from($this->table);
         return $this->db->count_all_results();
     }
@@ -57,7 +56,6 @@ class Biodata_balita_model extends CI_Model
 	$this->db->or_like('nama_ibu', $q);
 	$this->db->or_like('alamat', $q);
 	$this->db->or_like('no_tlp', $q);
-	$this->db->or_like('punya_buku_kia', $q);
 	$this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
     }

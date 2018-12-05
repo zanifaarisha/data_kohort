@@ -33,10 +33,7 @@
             <label for="varchar">No Tlp <?php echo form_error('no_tlp') ?></label>
             <input type="text" class="form-control" name="no_tlp" id="no_tlp" placeholder="No Tlp" value="<?php echo $no_tlp; ?>" />
         </div>
-	    <div class="form-group">
-            <label for="varchar">Punya Buku Kia <?php echo form_error('punya_buku_kia') ?></label>
-            <input type="text" class="form-control" name="punya_buku_kia" id="punya_buku_kia" placeholder="Punya Buku Kia" value="<?php echo $punya_buku_kia; ?>" />
-        </div>
+	    
 	    <input type="hidden" name="id_balita" value="<?php echo $id_balita; ?>" /> 
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
 	    <a href="<?php echo site_url('biodata_balita') ?>" class="btn btn-default">Cancel</a>
