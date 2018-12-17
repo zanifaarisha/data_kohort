@@ -7,7 +7,7 @@ class Biodata_ibu_hamil_model extends CI_Model
 {
 
     public $table = 'tbl_biodata_ibu_hamil';
-    public $id = 'id_ibu_hamil';
+    public $id = 'id';
     public $order = 'DESC';
 
     function __construct()
@@ -31,38 +31,24 @@ class Biodata_ibu_hamil_model extends CI_Model
     
     // get total rows
     function total_rows($q = NULL) {
-        $this->db->like('id_ibu_hamil', $q);
-	$this->db->or_like('no_urut', $q);
-	$this->db->or_like('no_indek', $q);
-	$this->db->or_like('id_nama', $q);
-	$this->db->or_like('alamat', $q);
-	$this->db->or_like('id_umur', $q);
-	$this->db->or_like('hamil_ke', $q);
-	$this->db->or_like('bb_tb', $q);
-	$this->db->or_like('lila_mt', $q);
-	$this->db->or_like('hb_goldar', $q);
-	$this->db->or_like('tensi', $q);
-	$this->db->or_like('id_resiko', $q);
-	$this->db->from($this->table);
+        $this->db->like('id', $q);
+        $this->db->or_like('nama', $q);
+        $this->db->or_like('nama_suami', $q);
+        $this->db->or_like('alamat', $q);
+        $this->db->or_like('tgl_lahir', $q);
+        $this->db->from($this->table);
         return $this->db->count_all_results();
     }
 
     // get data with limit and search
     function get_limit_data($limit, $start = 0, $q = NULL) {
         $this->db->order_by($this->id, $this->order);
-        $this->db->like('id_ibu_hamil', $q);
-	$this->db->or_like('no_urut', $q);
-	$this->db->or_like('no_indek', $q);
-	$this->db->or_like('id_nama', $q);
-	$this->db->or_like('alamat', $q);
-	$this->db->or_like('id_umur', $q);
-	$this->db->or_like('hamil_ke', $q);
-	$this->db->or_like('bb_tb', $q);
-	$this->db->or_like('lila_mt', $q);
-	$this->db->or_like('hb_goldar', $q);
-	$this->db->or_like('tensi', $q);
-	$this->db->or_like('id_resiko', $q);
-	$this->db->limit($limit, $start);
+        $this->db->like('id', $q);
+        $this->db->or_like('nama', $q);
+        $this->db->or_like('nama_suami', $q);
+        $this->db->or_like('alamat', $q);
+        $this->db->or_like('tgl_lahir', $q);
+        $this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
     }
 

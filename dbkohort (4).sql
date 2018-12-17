@@ -1,23 +1,17 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.3
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 27, 2018 at 05:15 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Host: localhost:3306
+-- Generation Time: Dec 17, 2018 at 12:31 PM
+-- Server version: 5.6.35
+-- PHP Version: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
--- Database: `dbkohort`
+-- Database: `works_kohort`
 --
 
 -- --------------------------------------------------------
@@ -96,28 +90,21 @@ CREATE TABLE `tbl_biodata_bayi` (
 --
 
 CREATE TABLE `tbl_biodata_ibu_hamil` (
-  `id_ibu_hamil` int(11) NOT NULL,
-  `no_urut` varchar(100) NOT NULL,
-  `no_indek` varchar(100) NOT NULL,
-  `id_nama` varchar(100) NOT NULL,
+  `id` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `nama_suami` varchar(100) NOT NULL,
   `alamat` varchar(100) NOT NULL,
-  `id_umur` varchar(100) NOT NULL,
-  `hamil_ke` varchar(10) NOT NULL,
-  `bb_tb` varchar(10) NOT NULL,
-  `lila_mt` varchar(10) NOT NULL,
-  `hb_goldar` varchar(10) NOT NULL,
-  `tensi` varchar(10) NOT NULL,
-  `id_resiko` int(100) NOT NULL
+  `tgl_lahir` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_biodata_ibu_hamil`
 --
 
-INSERT INTO `tbl_biodata_ibu_hamil` (`id_ibu_hamil`, `no_urut`, `no_indek`, `id_nama`, `alamat`, `id_umur`, `hamil_ke`, `bb_tb`, `lila_mt`, `hb_goldar`, `tensi`, `id_resiko`) VALUES
-(1, '1', '011', '001', 'tentara pelajar', '201', '2', '55/155', '40', '120', '145', 111),
-(2, '2', '012', '002', 'banda', '202', '1', '60', '35', '100', '125', 112),
-(3, '3', '013', '003', 'layya', '203', '1', '45', '27', '90', '100', 113);
+INSERT INTO `tbl_biodata_ibu_hamil` (`id`, `nama`, `nama_suami`, `alamat`, `tgl_lahir`) VALUES
+(1, 'ifa', 'tidak tau', 'tentara pelajar', '2018-12-17'),
+(2, 'dian', 'akbar', 'banda', '2018-12-09'),
+(3, 'wiwik', 'hamster', 'layya', '2018-12-02');
 
 -- --------------------------------------------------------
 
@@ -348,6 +335,20 @@ CREATE TABLE `tbl_pasien` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_pelayanan`
+--
+
+CREATE TABLE `tbl_pelayanan` (
+  `id` int(11) NOT NULL,
+  `id_pasien` int(11) NOT NULL,
+  `tgl_pelayanan` date NOT NULL,
+  `tgl_hpht` date NOT NULL,
+  `anc_awal` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_umur`
 --
 
@@ -418,7 +419,7 @@ ALTER TABLE `tbl_biodata_bayi`
 -- Indexes for table `tbl_biodata_ibu_hamil`
 --
 ALTER TABLE `tbl_biodata_ibu_hamil`
-  ADD PRIMARY KEY (`id_ibu_hamil`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_imunisasi_bayi`
@@ -475,6 +476,12 @@ ALTER TABLE `tbl_pasien`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_pelayanan`
+--
+ALTER TABLE `tbl_pelayanan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_umur`
 --
 ALTER TABLE `tbl_umur`
@@ -514,7 +521,7 @@ ALTER TABLE `tbl_biodata_bayi`
 -- AUTO_INCREMENT for table `tbl_biodata_ibu_hamil`
 --
 ALTER TABLE `tbl_biodata_ibu_hamil`
-  MODIFY `id_ibu_hamil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tbl_imunisasi_bayi`
 --
@@ -561,6 +568,11 @@ ALTER TABLE `tbl_nama`
 ALTER TABLE `tbl_pasien`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `tbl_pelayanan`
+--
+ALTER TABLE `tbl_pelayanan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `tbl_umur`
 --
 ALTER TABLE `tbl_umur`
@@ -570,6 +582,3 @@ ALTER TABLE `tbl_umur`
 --
 ALTER TABLE `tbl_user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

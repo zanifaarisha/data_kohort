@@ -15,8 +15,28 @@ class Perhitungan extends CI_Controller
     public function anc(){
     
         $data['konten'] = 'perhitungan/anc';
-        $data['action'] = '';
+        $data['pasien'] = $this->Biodata_ibu_hamil_model->get_all();
+        $data['action'] = 'anc_awal';
         $this->load->view('templates/admin/index', $data);
+    }
+
+    public function anc_awal(){
+        // print_r($_POST);exit;
+        $date = date('Y-m-d');
+        $id_pasien = $this->input->post('id_pasien');
+        $tgl_hpht = $this->input->post('tgl_hpht');
+        $so = $this->input->post('obsetri') ? 10:0;
+        $sp = $this->input->post('paritas') ? 10:0;
+        $jk = $this->input->post('jarak_kehamilan') ? 10:0;
+        $um = $this->input->post('umur') ? 30:0;
+        $kom = $this->input->post('komplikasi') ? 30:10;
+
+        $np = $so + $sp + $jk + $um + $kom;
+        // echo $np;
+
+        $insert = $this->db->query("INSERT INTO tbl_pelayanan (id_pasien, tgl_pelayanan, tgl_hpht, anc_awal) VALUES ('$id_pasien', '$date', '$tgl_hpht', '$np') ");
+        $this->session->flashdata('success', 'Berhasil menyimpan data. Silahkan ke Menu Pemeriksaan untuk melakukan pemeriksaan lebih lanjut');
+        redirect('anc');
     }
 
 
