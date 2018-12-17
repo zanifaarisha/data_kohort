@@ -7,7 +7,7 @@
           <img src="<?php echo base_url() ?>templates/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p><?php echo $this->session->userdata('nama') ?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -65,6 +65,21 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo site_url() ?>biodata_balita"><i class="fa fa-circle-o"></i> Biodata Balita</a></li>
             <li><a href="<?php echo site_url() ?>imunisasi_lanjutan"><i class="fa fa-circle-o"></i> Imunisasi Lanjutan</a></li>
+          </ul>
+        </li>
+
+        <li class="active treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Master</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo site_url() ?>perhitungan/anc"><i class="fa fa-circle-o"></i> ANC</a></li>
+            <li><a href="<?php echo site_url() ?>perhitungan/cf"><i class="fa fa-circle-o"></i> Certainty Factor</a></li>
+
+
           </ul>
         </li>
 
