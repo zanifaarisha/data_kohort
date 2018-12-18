@@ -3,7 +3,7 @@
     <div class="col-md-6">
 
         <!-- <h2 style="margin-top:0px">Form Kohort Ibu </h2> -->
-     <table>
+     <table class="table table-responsive table-stripped">
         <thead>
             <tr>
                 <th>Pasien</th>

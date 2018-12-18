@@ -20,7 +20,7 @@ class Perhitungan extends CI_Controller
     }
 
     public function anc(){
-    
+        $data['anc_data'] = $this->db->query(" SELECT * FROM tbl_anc a JOIN tbl_biodata_ibu_hamil b ON b.id=a.id_pasien  ")->result();
         $data['konten'] = 'perhitungan/anc';
         $data['pasien'] = $this->Biodata_ibu_hamil_model->get_all();
         $this->load->view('templates/admin/index', $data);
