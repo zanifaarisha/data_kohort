@@ -72,8 +72,8 @@
 
                         <tr>
                             <td>ANC Akhir</td>
-                            <td></td>
-                            <td></td>
+                            <td id="anc_akhir"></td>
+                            <td id="keterangan"></td>
                             <td></td>
                         </tr>
                         
@@ -124,6 +124,8 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
+
+    // $('#anc_akhir').text($('#nk1').text()+$('#nk2').text()+$('#nk3').text()+$('#nk4').text());
     $('#id_pasien').on('change', function() {
         // alert( this.value );
         var v = this.value;
@@ -154,6 +156,8 @@ $(document).ready(function() {
                         
                             $('#nk'+nu_nk++).text(nk);
                             $('#sp'+nu_sp++).text(sp);
+                            $('#anc_akhir').val(response.anc_akhir.anc);
+
 
                         });
                     }else{
@@ -193,6 +197,7 @@ $(document).ready(function() {
                         $('#tekanan_darah').val(td);
                         $('#berat_badan').val(bb);
                         $('#lingkar_perut').val(lp);
+                        $('#anc_akhir').val(response.anc_akhir.anc);
 
 
                 }
@@ -234,6 +239,7 @@ $(document).ready(function() {
                         // alert(response.data);
                         // console.log(response);
                         var data = response.data;
+                        var anc = response.anc_akhir;
                         var nu_nk = 1;
                         var nu_sp = 1;
                         data.forEach(function(k){
@@ -243,11 +249,30 @@ $(document).ready(function() {
                             $('#nk'+nu_nk++).text(nk);
                             $('#sp'+nu_sp++).text(sp);
 
-                            // $('#tekanan_darah').val('');
-                            // $('#berat_badan').val('');
-                            // $('#lingkar_perut').val('');
+            
 
                         });
+
+                        if (anc) {
+                            // if (response.data.kunjungan_ke == ) {
+                                
+                            // }
+                                // alert(anc.anc_akhir);
+                                $('#anc_akhir').text(anc.anc);
+                                var ket ='';
+                                if (anc.anc <200) {
+                                    ket = 'penanganan nifas secara caesar dan memungkinan mengakibatkan meninggalnya ibu hamil dan anak cukup tinggi.';
+                                }else if(anc.anc >= 200 && anc.anc<=300){
+                                    ket = 'penanganan nifas secara normal dengan kemungkinan meninggalnya ibu hamil dan anak cukup rendah.';
+                                }else if(anc.anc > 300){
+                                    ket = 'penanganan nifas secara caesar dan memungkinan mengakibatkan meninggalnya ibu hamil dan anak cukup tinggi';
+                                }
+
+                                $('#keterangan').text(ket);
+                                // console.log(anc.anc);
+                        }
+                        // $('#keterangan').text('adasd');
+
 
                 }
            });
