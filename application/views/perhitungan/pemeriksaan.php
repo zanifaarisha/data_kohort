@@ -156,7 +156,7 @@ $(document).ready(function() {
                         
                             $('#nk'+nu_nk++).text(nk);
                             $('#sp'+nu_sp++).text(sp);
-                            $('#anc_akhir').val(response.anc_akhir.anc);
+                            $('#anc_akhir').val(response.anc_akhir.anc / response.anc_awal.anc_awal );
 
 
                         });
@@ -197,7 +197,7 @@ $(document).ready(function() {
                         $('#tekanan_darah').val(td);
                         $('#berat_badan').val(bb);
                         $('#lingkar_perut').val(lp);
-                        $('#anc_akhir').val(response.anc_akhir.anc);
+                        $('#anc_akhir').val(response.anc_akhir.anc / response.anc_awal.anc_awal);
 
 
                 }
@@ -258,7 +258,7 @@ $(document).ready(function() {
                                 
                             // }
                                 // alert(anc.anc_akhir);
-                                $('#anc_akhir').text(anc.anc);
+                                $('#anc_akhir').text(anc.anc / response.anc_awal.anc_awal);
                                 var ket ='';
                                 if (anc.anc <200) {
                                     ket = 'penanganan nifas secara caesar dan memungkinan mengakibatkan meninggalnya ibu hamil dan anak cukup tinggi.';

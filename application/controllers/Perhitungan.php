@@ -77,11 +77,12 @@ class Perhitungan extends CI_Controller
     public function get_pemeriksaan(){
         $id = $this->input->post('id_pasien');
 
+        $anc_awal = $this->db->query("SELECT * FROM tbl_anc WHERE id_pasien='$id' ")->row();
         $anc = $this->db->query("SELECT sum(nilai_kunjungan) as anc FROM tbl_kunjungan WHERE id_pasien='$id' ")->row();
      
         $get_kunjungan = $this->db->query(" SELECT * FROM tbl_kunjungan where id_pasien='$id' order by id ")->result();
         if ($get_kunjungan) {
-            echo json_encode(['data'=>$get_kunjungan, 'anc_akhir'=>$anc]);
+            echo json_encode(['data'=>$get_kunjungan, 'anc_akhir'=>$anc, 'anc_awal'=>$anc_awal ]);
             exit;
         }
        echo json_encode(['data'=>'no data']);
@@ -91,10 +92,12 @@ class Perhitungan extends CI_Controller
         $id = $this->input->post('id_pasien');
         $k = $this->input->post('kunjungan');
 
+        $anc_awal = $this->db->query("SELECT * FROM tbl_anc WHERE id_pasien='$id' ")->row();
+
         if ($k) {
             $anc = $this->db->query("SELECT sum(nilai_kunjungan) as anc FROM tbl_kunjungan WHERE id_pasien='$id' ")->row();
             $get_kunjungan = $this->db->query(" SELECT * FROM tbl_kunjungan where id_pasien='$id' AND kunjungan_ke='$k' ")->row();
-            echo json_encode(['data'=>$get_kunjungan, 'anc_akhir'=>$anc]);
+            echo json_encode(['data'=>$get_kunjungan, 'anc_akhir'=>$anc, 'anc_awal'=>$anc_awal]);
 
         }
        
@@ -136,13 +139,15 @@ class Perhitungan extends CI_Controller
                 $status = 'tidak normal';
             }
         }
+
+        $anc_awal = $this->db->query("SELECT * FROM tbl_anc WHERE id_pasien='$id_pasien' ")->row();
         
         $anc = $this->db->query("SELECT sum(nilai_kunjungan) as anc FROM tbl_kunjungan WHERE id_pasien='$id_pasien' ")->row();
         $update_kunjungan = $this->db->query(" UPDATE tbl_kunjungan SET tekanan_darah='$tekanan_darah', berat_badan='$berat_badan', lingkar_perut='$lingkar_perut', nilai_kunjungan='$nilai_kunjungan', status='$status' WHERE id_pasien='$id_pasien' AND kunjungan_ke='$kunjungan' ");
        
         $get_kunjungan = $this->db->query(" SELECT * FROM tbl_kunjungan where id_pasien='$id_pasien' order by id ")->result();
        
-       echo json_encode(['data'=>$get_kunjungan, 'anc_akhir'=>$anc]);
+       echo json_encode(['data'=>$get_kunjungan, 'anc_akhir'=>$anc, 'anc_awal'=>$anc_awal]);
     }
 
 
